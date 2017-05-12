@@ -8,17 +8,22 @@ import {ShopPage} from "../shop/shop";
   templateUrl: 'home.html'
 })
 export class HomePage {
+  /* Ein weg um zwischen Seiten zu wechseln */
 
   constructor(public navCtrl: NavController) {
 
   }
 
   onGoToUsers() {
-    this.navCtrl.push(UsersPage);
+    this.navCtrl.push(UsersPage)
+      .catch((error) => {
+        console.log("Acces denied, argument was: " + error)
+      });
   }
 
   onGoToShop() {
     this.navCtrl.push(ShopPage);
   }
-
+  /* Anderer Weg zwischen seiten zu wechseln */
+  usersPage = UsersPage;
 }

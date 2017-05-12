@@ -19,4 +19,5 @@ export class ShopPage {
       product: product
     });
   }
+
 }
